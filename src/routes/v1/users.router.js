@@ -3,12 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const Users = require("../../controllers/users.controller");
 const routers = express.Router();
-const verifyToken = require("../../services/auth.service")
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-routers.get("/getAllUsers", Users.getAllUsers);
-routers.post("/addUsers", Users.addUsers);
-routers.put("/updateOrForgetUsers", Users.updateOrForgetUsers);
-routers.post("/loginUsers",Users.loginUsers);
+routers.post("/post/login/users", Users.loginUsers);
 module.exports = routers;

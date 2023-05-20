@@ -8,11 +8,11 @@ const routers = express.Router();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-routers.get("/getAllEmail",Email.getAllEmail);
-routers.get("/getOneEmail/:id", Email.getOneEmail);
-routers.post("/addEmail", Email.addEmail);
-routers.delete("/delEmail/:id",Email.delEmail);
-routers.put("/updateEmail/:id", Email.updateEmail);
-routers.get("/searchEmail/:keyw", Email.searchEmail);
+routers.get("/get/all/email", Email.getAllEmail);
+routers.get("/get/one/email/:id", Email.getOneEmail);
+routers.post("/post/add/email", Email.addEmail);
+routers.delete("/delete/del/email/:id", Email.delEmail);
+routers.put("/put/update/email/:id", Email.updateEmail);
+routers.get("/get/search/email/:keyw", Email.searchEmail);
 
 module.exports = routers;

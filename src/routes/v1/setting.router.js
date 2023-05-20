@@ -1,20 +1,17 @@
 const express = require("express");
-
 const app = express();
+const routers = express.Router();
 
-const PORT = 3333;
 const bodyParser = require("body-parser");
 const Setting = require("../../controllers/setting.controller");
-const conn = require("../../configs/configdb.js");
 
-const routers = express.Router();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-routers.get("/getAllSetting", Setting.getAllSetting);
-routers.get("/getOneSetting/:id", Setting.getOneSetting);
-routers.post("/addSetting", Setting.addSetting);
-routers.delete("/delSetting/:id", Setting.delSetting);
-routers.put("/updateSetting/:id", Setting.updateSetting);
-routers.get("/searchSetting/:keyw", Setting.searchSetting);
+routers.get("/get/all/setting", Setting.getAllSetting);
+routers.get("/get/one/setting/:id", Setting.getOneSetting);
+routers.post("/post/add/setting", Setting.addSetting);
+routers.delete("/delete/del/setting/:id", Setting.delSetting);
+routers.put("/put/update/setting/:id", Setting.updateSetting);
+routers.get("/get/search/setting/:keyw", Setting.searchSetting);
 
 module.exports = routers;
