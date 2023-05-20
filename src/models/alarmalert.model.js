@@ -6,8 +6,8 @@ const joi = require("joi");
 const mssql = require("mssql");
 
 const schema = joi.object().keys({
-  start_datetime: joi.date().iso(),
-  end_datetime: joi.date().iso(),
+  alarm_name: joi.string().required(),
+  alarm_dec: joi.string().required(),
 });
 
 module.exports = schema;
